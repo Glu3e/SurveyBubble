@@ -6,8 +6,8 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "app": "node server.js",
-    "start": "concurrently \"npm run tsc:w\" \"npm run app\" ",
-    "postinstall": "typings install"
+    "start": "concurrently \"npm run tsc:w\" \"npm run app\" "
+    
   },
   "dependencies": {
     "@angular/common": "2.4.5",
