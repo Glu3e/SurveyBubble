@@ -1,0 +1,16 @@
+/* Custom CSS goes here */
+body {
+  padding-bottom: 70px;
+  background-color: 	#9cbde7
+  }
+  .navbar-light {
+    background-color: #ffad42;
+  }
+  .navbar-text {
+    color: #42a5de;
+  }
+  .icon-bar {
+    background-color: #42a5de;
+  }
+  
+
