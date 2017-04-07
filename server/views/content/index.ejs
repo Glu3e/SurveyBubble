@@ -11,7 +11,26 @@
           <% } else { %>
             <h2>Welcome to <%= title %></h2>
           <% } %>
-             <p>Who needs Survey Monkey when you can use Survey Bubble!</p> 
+             <p>Who needs Survey Monkey when you can use Survey Bubble!</p>
+
+             <% for (let count = 1; count < 3; count++) { %>
+
+             <fieldset style="margin-bottom: 25px; border-radius: 15px;">                
+                <h4> Question <%= [count] %> </h4>
+                  <label>This is question ___?</label><br/>
+                  <label>a) </label><br/>
+                  <label>b) </label><br/>
+                  <label>c) </label><br/>
+                  <label>d) </label><br/>
+              </fieldset>
+
+             <% } %>
+
+              
+
+            </form>
+
+
           </div>
         </div>
       </div>
