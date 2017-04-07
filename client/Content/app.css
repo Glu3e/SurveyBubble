@@ -1,16 +1,33 @@
-/* Custom CSS goes here */
+/* Custom CSS goes here 
+have to add this refrence image to site
+<a href="http://www.freepik.com/free-vector/coloured-polygonal-background-design_906349.htm">Designed by Freepik</a>
+*/
 body {
   padding-bottom: 70px;
-  background-color: 	#9cbde7
+  background-color: 	#C63D0F;
   }
-  .navbar-light {
-    background-color: #ffad42;
+  .navbar {
+    background-color: #3B3738;
   }
   .navbar-text {
-    color: #42a5de;
+    color: #FFFFFF;
+  }
+  .navbar-nav {
+    color: #FFFFFF;
   }
   .icon-bar {
-    background-color: #42a5de;
+    background-color: #FFFFFF;
   }
-  
+  #front {
+    background: url( https://static.vecteezy.com/system/resources/previews/000/113/007/original/orange-geometric-low-poly-vector-background.jpg) no-repeat;
+    box-shadow: 8px 8px 5px #393e47;
+  }
+  .iconImage {
+    width: 100px;
+    height: 100px;
+  }
+    .login {
+    border-radius: 15px; 
+    background-color: #FDF3E7;
+  }
 

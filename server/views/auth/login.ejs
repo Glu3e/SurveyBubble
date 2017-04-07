@@ -5,8 +5,13 @@
      <% if (messages.length > 0) { %>
         <div class="alert alert-danger"><%= messages %></div>
       <% } %>
+       <div class= "iconImage">
+       <img src="http://localhost:3000/images/SurveyBubble.png" />
+      </div>
+    
       <div class="row">
         <div class="col-md-offset-4 col-md-4">
+        <div class=login>
            <h1>Please Login</h1>
            <form method="post">
                 <fieldset class="form-group">
@@ -25,8 +30,10 @@
                     </a>
                </fieldset>
             </form>
+             </div>
          </div>
       </div>
+   
     </main>
 
 <% include ../partials/footer.ejs %>

@@ -4,14 +4,16 @@
     <div class="container">
       <div class="row">
         <div class="container">
-          <div class="jumbotron">
+        <div class="bg">
+          <div class="jumbotron" id="front">
           <h1><%= title %></h1>
           <% if(displayName) { %>
             <h2>Welcome <%= title %>, <%= displayName %></h2>
           <% } else { %>
             <h2>Welcome to <%= title %></h2>
           <% } %>
-             <p>Who needs Survey Monkey when you can use Survey Bubble!</p> 
+             <p>Who needs Survey Monkey when you can use Survey Bubble!</p>
+             </div> 
           </div>
         </div>
       </div>
