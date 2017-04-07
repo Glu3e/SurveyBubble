@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
 });
 
 /* GET contact page. */
-router.get('/contact', (req, res, next) => {
+router.get('/Search', (req, res, next) => {
   indexController.DisplayContact(req, res);
 });
 
