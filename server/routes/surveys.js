@@ -3,38 +3,38 @@ let express = require('express');
 let router = express.Router();
 
 // define the game model
-let game = require('../models/games');
+let game = require('../models/surveys');
 
 // require the users controller for authentication
 let usersController = require('../controllers/users');
 
 // require the games controller to access games collection in findById
-let gamesController = require('../controllers/games');
+let surveysController = require('../controllers/surveys');
 
 /* GET games List page. READ */
 router.get('/', usersController.RequireAuth, (req, res, next) => {
-  gamesController.ReadGameList(req, res);
+  surveysController.ReadSurveyList(req, res);
 });
 
 //  GET the Game Details page in order to add a new Game
 router.get('/add', usersController.RequireAuth, (req, res, next) => {
-  gamesController.DisplayAdd(req, res);
+  surveysController.DisplayAdd(req, res);
 }).post('/add', usersController.RequireAuth, (req, res, next) => {
   // POST process the Game Details page and create a new Game - CREATE
-  gamesController.CreateGame(req, res);
+  surveysController.CreateSurvey(req, res);
 });
 
 // GET the Game Details page in order to edit a new Game
 router.get('/:id', usersController.RequireAuth, (req, res, next) => {
-  gamesController.DisplayEdit(req, res);
+  surveysController.DisplayEdit(req, res);
 }).post('/:id', usersController.RequireAuth, (req, res, next) => {
   // POST - process the information passed from the details form and update the document
-  gamesController.UpdateGame(req, res);
+  surveysController.UpdateSurvey(req, res);
 });
 
 // GET - process the delete by user id
 router.get('/delete/:id', usersController.RequireAuth, (req, res, next) => {
-  gamesController.DeleteGame(req, res);
+  surveysController.DeleteSurvey(req, res);
 });
 
 module.exports = router;

@@ -11,20 +11,20 @@ module.exports.DisplayLogin = (req, res) => {
     // render the login page
     res.render('auth/login', {
       title: "Login",
-      games: '',
+      surveys: '',
       messages: req.flash('error'),
       displayName: req.user ? req.user.displayName : ''
     });
     return;
   } else {
-    return res.redirect('/games'); // redirect to games list
+    return res.redirect('/surveys'); // redirect to games list
   }
 }
 
 // Processes the Login Request
 module.exports.ProcessLogin = () => {
   return passport.authenticate('local', {
-  successRedirect: '/games',
+  successRedirect: '/surveys',
   failureRedirect: '/users/login',
   failureFlash: true
 })
@@ -43,7 +43,7 @@ module.exports.DisplayRegistration = (req, res) => {
     });
     return;
   } else {
-    return res.redirect('/games'); // redirect to games list
+    return res.redirect('/surveys'); // redirect to games list
   }
 }
 
@@ -72,7 +72,7 @@ module.exports.ProcessRegistration = (req, res) => {
       }
       // if registration is successful
       return passport.authenticate('local')(req, res, ()=>{
-        res.redirect('/games');
+        res.redirect('/surveys');
       });
     });
 }

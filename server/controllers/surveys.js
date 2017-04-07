@@ -1,19 +1,19 @@
 let mongoose = require('mongoose');
 
 // define the game model
-let game = require('../models/games');
+let survey = require('../models/surveys');
 
 // Read and display the Game List
-module.exports.ReadGameList = (req, res) => {
+module.exports.ReadSurveyList = (req, res) => {
   // find all games in the games collection
-  game.find( (err, games) => {
+  survey.find( (err, surveys) => {
     if (err) {
       return console.error(err);
     }
     else {
-      res.render('games/index', {
-        title: 'Games',
-        games: games,
+      res.render('surveys/index', {
+        title: 'Surveys',
+        surveys: surveys,
         displayName: req.user.displayName
       });
     }
@@ -22,27 +22,29 @@ module.exports.ReadGameList = (req, res) => {
 
 // displays the Details page - allowing users to add a new Game
 module.exports.DisplayAdd = (req, res) => {
-  res.render('games/details', {
-    title: "Add a new Game",
-    games: '',
+  res.render('surveys/details', {
+    title: "Add a new survey",
+    surveys: '',
     displayName: req.user.displayName
   });
 }
 // change this to fit the survey site
 // Create a new game and insert it into the db
-module.exports.CreateGame = (req, res) => {
-  let newGame = game({
+module.exports.CreateSurvey = (req, res) => {
+  let newSurvey = survey({
       "name": req.body.name,
-      "cost": req.body.cost,
-      "rating": req.body.rating
+      "QuestionNum": req.body.QuestionNum,
+      "questions": req.body.questions,
+      "answers": req.body.answers,
+      "answerNum": req.body.answerNum
     });
 
-    game.create(newGame, (err, game) => {
+    survey.create(newSurvey, (err, survey) => {
       if(err) {
         console.log(err);
         res.end(err);
       } else {
-        res.redirect('/games');
+        res.redirect('/surveys');
       }
     });
 }
@@ -55,15 +57,15 @@ module.exports.DisplayEdit = (req, res) => {
       let id = mongoose.Types.ObjectId.createFromHexString(req.params.id);
 
         // find one game by its id
-      game.findById(id, (err, games) => {
+      survey.findById(id, (err, surveys) => {
         if(err) {
           console.log(err);
           res.end(error);
         } else {
           // show the game details view
-          res.render('games/details', {
-              title: 'Game Details',
-              games: games,
+          res.render('surveys/details', {
+              title: 'survey Details',
+              surveys: surveys,
               displayName: req.user.displayName
           });
         }
@@ -75,40 +77,42 @@ module.exports.DisplayEdit = (req, res) => {
 }
 
 // Update an existing Game in the games collection
-module.exports.UpdateGame = (req, res) => {
+module.exports.UpdateSurvey = (req, res) => {
   // get a reference to the id from the url
     let id = req.params.id;
 
-     let updatedGame = game({
+     let updatedSurvey = survey({
        "_id": id,
       "name": req.body.name,
-      "cost": req.body.cost,
-      "rating": req.body.rating
+      "QuestionNum": req.body.QuestionNum,
+      "questions": req.body.questions,
+      "answers": req.body.answers,
+      "answerNum": req.body.answerNum
     });
 
-    game.update({_id: id}, updatedGame, (err) => {
+    survey.update({_id: id}, updatedSurvey, (err) => {
       if(err) {
         console.log(err);
         res.end(err);
       } else {
         // refresh the game List
-        res.redirect('/games');
+        res.redirect('/surveys');
       }
     });
 }
 
 // Deletes a game from the games collection
-module.exports.DeleteGame = (req, res) => {
+module.exports.DeleteSurvey = (req, res) => {
     // get a reference to the id from the url
     let id = req.params.id;
 
-    game.remove({_id: id}, (err) => {
+    survey.remove({_id: id}, (err) => {
       if(err) {
         console.log(err);
         res.end(err);
       } else {
         // refresh the games list
-        res.redirect('/games');
+        res.redirect('/Surveys');
       }
     });
 }
