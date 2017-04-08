@@ -1,0 +1,66 @@
+<% include ../partials/header.ejs %>
+<h1>Survey making page!</h1>
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <h1><%= title %></h1>
+            <form class="form" method="post">
+
+              <div class="form-group">
+                <label for="SurveyTitleTextField">Survey Title</label>
+                <input type="text" class="form-control" id="SurveyTitleTextField"
+                placeholder="Survey Title" name="surveyTitle" value="<%= msurveys.surveyTitle %>"  required>
+              </div>
+
+              <div class="form-group">
+                <label for="EndDateTextField">End Date</label>
+                <input type="text" class="form-control" id="EndDateTextField"
+                placeholder="12/31/2018" name="endDate" value="<%= msurveys.endDate %>"  required>
+              </div>
+              
+              <% for (let count = 0; count < 1; count++) { %>
+
+                <h3>Question <%= [count] %></h3>
+
+                <div class="form-group">  
+                  <label for="QuestionTitleTextField<%= [count] %>">Question Title</label>
+                  <input type="text" class="form-control" id="QuestionTitleTextField<%= [count] %>"
+                  placeholder="Question Title" name="questionTitle<%= [count] %>" 
+                  value="<%= msurveys.questionTitle %>"  required>
+                </div>
+                
+                <div class="form-group"> 
+                  <label for="OptionATextField<%= [count] %>">Option A</label>
+                  <input type="text" class="form-control" id="OptionATextField<%= [count] %>"
+                  placeholder="A)" name="optionA<%= [count] %>" value=""  required>
+                </div>
+
+                <div class="form-group"> 
+                  <label for="OptionBTextField<%= [count] %>">Option B</label>
+                  <input type="text" class="form-control" id="OptionBTextField<%= [count] %>"
+                  placeholder="B)" name="optionB<%= [count] %>" value=""  required>
+                </div>
+
+                <div class="form-group"> 
+                  <label for="OptionCTextField<%= [count] %>">Option C</label>
+                  <input type="text" class="form-control" id="OptionCTextField<%= [count] %>"
+                  placeholder="C)" name="optionC<%= [count] %>" value=""  required>
+                </div>
+
+                <div class="form-group"> 
+                  <label for="OptionDTextField<%= [count] %>">Option D</label>
+                  <input type="text" class="form-control" id="OptionDTextField<%= [count] %>"
+                  placeholder="D)" name="optionD<%= [count] %>" value=""  required>
+                </div>
+
+              <% } %>
+
+              <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
+              <a href="/msurveys" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+            </form>
+        </div>
+      </div>
+    </div>
+
+<% include ../partials/footer.ejs %>

@@ -3,13 +3,13 @@ let express = require('express');
 let router = express.Router();
 
 // define the game model
-let survey = require('../models/surveys');
+let survey = require('../models/msurveys');
 
 // require the users controller for authentication
 let usersController = require('../controllers/users');
 
 // require the games controller to access games collection in findById
-let surveysController = require('../controllers/surveys');
+let surveysController = require('../controllers/msurveys');
 
 /* GET games List page. READ */
 router.get('/', usersController.RequireAuth, (req, res, next) => {
