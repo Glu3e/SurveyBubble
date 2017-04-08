@@ -26,11 +26,12 @@ module.exports.ReadSurveyList = (req, res) => {
 // Create a new game and insert it into the db
 module.exports.CreateSurvey = (req, res) => {
   let newSurvey = survey({
-      "name": req.body.name,
-      "QuestionNum": req.body.QuestionNum,
+      "surveyTitle": req.body.surveyTitle,
+      "submittedBy": req.body.submittedBy,
+      "startDate": req.body.startDate,
+      "endDate": req.body.endDate,
       "questions": req.body.questions,
-      "answers": req.body.answers,
-      "answerNum": req.body.answerNum
+      "shortAns": req.body.shortAns
     });
 
     survey.create(newSurvey, (err, survey) => {
@@ -72,11 +73,12 @@ module.exports.UpdateSurvey = (req, res) => {
 
      let updatedSurvey = survey({
        "_id": id,
-      "name": req.body.name,
-      "QuestionNum": req.body.QuestionNum,
+      "surveyTitle": req.body.surveyTitle,
+      "submittedBy": req.body.submittedBy,
+      "startDate": req.body.startDate,
+      "endDate": req.body.endDate,
       "questions": req.body.questions,
-      "answers": req.body.answers,
-      "answerNum": req.body.answerNum
+      "shortAns": req.body.shortAns
     });
 
     survey.update({_id: id}, updatedSurvey, (err) => {

@@ -37,7 +37,7 @@ module.exports.DisplayRegistration = (req, res) => {
     // render the registration page
       res.render('auth/register', {
       title: "Register",
-      games: '',
+      surveys: '',
       messages: req.flash('registerMessage'),
       displayName: req.user ? req.user.displayName : ''
     });

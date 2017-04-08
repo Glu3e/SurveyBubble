@@ -1,32 +1,68 @@
 <% include ../partials/header.ejs %>
-<h1>Survey making page!</h1>
-    <!-- MAIN CONTENT 
     <div class="container">
       <div class="row">
         <div class="col-md-offset-3 col-md-6">
           <h1><%= title %></h1>
             <form class="form" method="post">
               <div class="form-group">
-                <label for="NameTextField">Name</label>
+                <label for="NameTextField">Survey Title</label> 
                 <input type="text" class="form-control" id="NameTextField"
-                placeholder="Game Name" name="name" value="<%= games.name %>" required>
+                placeholder="Survey Name" name="surveyTitle" value="<%= surveys.surveyTitle %>" required>
               </div>
+
               <div class="form-group">
-                <label for="CostTextField">Cost</label>
-                <input type="text" class="form-control" id="CostTextField"
-                placeholder="Game Cost" name="cost" value="<%= games.cost %>"  required>
+                <label for="QuestionTextField">Question</label>
+                <input type="text" class="form-control" id="QuestionTextField"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
+                <input type="text" class="form-control" id="AnswerTextField"
+                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
               </div>
+
               <div class="form-group">
-                <label for="RatingTextField">Rating</label>
-                <input type="text" class="form-control" id="RatingTextField"
-                placeholder="Game Rating" name="rating" value="<%= games.rating %>"  required>
+                <label for="QuestionTextField">Question</label>
+                <input type="text" class="form-control" id="QuestionTextField1"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
+                <input type="text" class="form-control" id="AnswerTextField"
+                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
+              </div>
+
+              <div class="form-group">
+                <label for="QuestionTextField">Question</label>
+                <input type="text" class="form-control" id="QuestionTextField2"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
+                <input type="text" class="form-control" id="AnswerTextField"
+                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
+              </div>
+
+              <div class="form-group">
+                <label for="QuestionTextField">Question</label>
+                <input type="text" class="form-control" id="QuestionTextField3"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
+                <input type="text" class="form-control" id="AnswerTextField"
+                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
+              </div>
+
+              <div class="form-group">
+                <label for="QuestionTextField">Question</label>
+                <input type="text" class="form-control" id="QuestionTextField4"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
+                <input type="text" class="form-control" id="AnswerTextField"
+                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
+              </div>
+
+              <div class="form-group">
+                <label for="QuestionTextField">Question</label>
+                <input type="text" class="form-control" id="QuestionTextField5"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
+                <input type="text" class="form-control" id="AnswerTextField"
+                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
               </div>
 
               <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
-              <a href="/games" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+              <a href="/surveys" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
             </form>
         </div>
       </div>
-    </div> FIX THIS 
--->
+    </div>
+
 <% include ../partials/footer.ejs %>

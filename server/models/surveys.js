@@ -1,18 +1,13 @@
-/** NEW SCHEMA 
- * Name : "name of survey "
- * questions: ""
- * answers: ""
- */ 
-
 let mongoose = require('mongoose');
 //change this to survey Schema
 // create a model class
 let surveySchema = mongoose.Schema({
-    name: String,
-    questionNum: Number,
+    surveyTitle: String,
+    submittedBy: String,
+    startDate: String,
+    endDate: String,
     questions: String,
-    answers: String,
-    answerNum: Number
+    shortAns: String
 },
 {
   collection: "surveys"
