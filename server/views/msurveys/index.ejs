@@ -1,0 +1,82 @@
+<% include ../partials/header.ejs %>
+
+    <!-- MAIN CONTENT -->
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <h3>Survey creation Page </h3>
+
+          <!--<% for (let count = 1; count < msurveys.length; count++) { %>
+
+             <fieldset style="margin-bottom: 25px; border-radius: 15px;">                
+                <h4> Question <%= [count] %> </h4>
+                  <label>This is question ___?</label><br/>
+                  <label>a) </label><br/>
+                  <label>b) </label><br/>
+                  <label>c) </label><br/>
+                  <label>d) </label><br/>
+              </fieldset>
+
+             <% } %>-->
+          
+          <a href="/msurveys/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a M Survey</a>
+          <br>
+          <table class="table table-bordered table-striped table-hover">
+            <tr>
+              <th class="text-center">Name</th>
+              <th class="text-center">Submitted By</th>
+              <th class="text-center">End Date</th>
+              <th class="text-center"></th>
+              <th class="text-center"></th>
+            </tr>
+            
+            <% for (let count = 0; count < msurveys.length; count++) { %>
+            <tr>
+              <td class="text-center"><%= msurveys[count].surveyTitle %></td>
+              <td class="text-center"><%= msurveys[count].submittedBy %></td>
+              <td class="text-center"><%= msurveys[count].endDate %></td>
+              <td class="text-center">
+              <a href="/msurveys/<%= msurveys[count]._id %>" class="btn btn-primary">
+              <i class="fa fa-pencil-square-o"></i> Edit</a>
+               </td>
+              <td class="text-center">
+              <a href="/msurveys/delete/<%= msurveys[count]._id %>" class="btn btn-danger">
+              <i class="fa fa-trash-o"></i> Delete</a>
+              </td>
+            </tr>
+            <% } %>
+          </table>
+
+          <% for (let outerCount = 0; outerCount < msurveys.length; outerCount++) { %>
+            <h3><%= msurveys[outerCount].surveyTitle %></h3>
+          
+          <% for (let count = 1; count < 2; count++) { %>
+
+             <fieldset style="margin-bottom: 25px; border-radius: 15px;">                
+                <h4> Question <%= [count] %> </h4>
+                  <label><%= msurveys[outerCount].question[count-1].questionTitle %></label><br/>
+                  <input id=rdBtnA<%= [count] %>" name="Question<%= [outerCount] %>.<%= [count] %>" type="radio" value="A">
+                  a) <%= msurveys[outerCount].question[count-1].optionA %><br/>
+                  <input id=rdBtnB<%= [count] %>" name="Question<%= [outerCount] %>.<%= [count] %>" type="radio" value="B">
+                  b) <%= msurveys[outerCount].question[count-1].optionB %><br/>
+                  <input id=rdBtnC<%= [count] %>" name="Question<%= [outerCount] %>.<%= [count] %>" type="radio" value="C">
+                  c) <%= msurveys[outerCount].question[count-1].optionC %><br/>
+                  <input id=rdBtnD<%= [count] %>" name="Question<%= [outerCount] %>.<%= [count] %>" type="radio" value="D">
+                  d) <%= msurveys[outerCount].question[count-1].optionD %><br/>
+              </fieldset>
+
+             <% } %>
+             <% } %>
+
+        </div>
+      </div>
+    </div>
+   
+
+    <my-app></my-app>
+
+
+<% include ../partials/footer.ejs %>
+
+

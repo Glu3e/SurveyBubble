@@ -44,10 +44,20 @@
           <% } %>
         <% } %>
 
+        <% if(typeof displayName == 'string' && displayName) { %>
+          <% if(title == "M Surveys") { %>
+          <li class="active"><a href="/msurveys"><i class="fa fa-list-alt fa-lg">
+          </i> M Surveys</a></li>
+          <% } else { %>
+            <li><a href="/msurveys"><i class="fa fa-list-alt fa-lg">
+            </i> M Surveys</a></li>
+          <% } %>
+        <% } %>
+
         <% if(title == "Search") { %>
-          <li class="active"><a href="/Search"><i class="fa fa-phone fa-lg"></i> Search</a></li>
+          <li class="active"><a href="/Search"><i class="fa fa-search fa-lg"></i> Search</a></li>
         <% } else { %>
-          <li><a href="/Search"><i class="fa fa-phone fa-lg"></i> Search</a></li>
+          <li><a href="/Search"><i class="fa fa-search fa-lg"></i> Search</a></li>
         <% } %>
 
         <% if(typeof displayName == 'string' && displayName) { %>

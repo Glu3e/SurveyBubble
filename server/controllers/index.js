@@ -2,7 +2,7 @@
 module.exports.DisplayHome = (req, res) => {
   res.render('content/index', {
     title: 'Survey Bubble',
-    games: '',
+    surveys: '',
     displayName: req.user ? req.user.displayName : ''
    });
 }
@@ -11,7 +11,7 @@ module.exports.DisplayHome = (req, res) => {
 module.exports.DisplayContact = (req, res) => {
   res.render('content/Search', {
     title: 'Search',
-    games: '',
+    surveys: '',
     displayName: req.user ? req.user.displayName : ''
    });
 }

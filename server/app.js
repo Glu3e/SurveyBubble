@@ -31,6 +31,7 @@ let index = require('./routes/index'); // top level routes
 let surveys = require('./routes/surveys'); // routes for games
 let users = require('./routes/users'); // routes for users and auth
 let api = require('./routes/api'); // routes for the JSON api
+let msurveys = require('./routes/msurveys');
 
 let app = express();
 
@@ -65,6 +66,7 @@ app.use('/', index); // top level links
 app.use('/surveys', surveys); // games links - start with /games
 app.use('/users', users); // users links - start with /users
 app.use('/api', api); // returns JSON
+app.use('/msurveys', msurveys);
 
 // Passport User Configuration
 let UserModel = require('./models/users');
