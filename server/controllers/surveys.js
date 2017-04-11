@@ -31,13 +31,18 @@ module.exports.DisplayAdd = (req, res) => {
 // change this to fit the survey site
 // Create a new game and insert it into the db
 module.exports.CreateSurvey = (req, res) => {
+  
+  let currentDate = new Date();
+  currentDate = currentDate.toLocaleDateString();
+  
   let newSurvey = survey({
-      "surveyTitle": req.body.surveyTitle,
-      "submittedBy": req.body.submittedBy,
-      "startDate": req.body.startDate,
-      "endDate": req.body.endDate,
-      "questions": req.body.questions,
-      "shortAns": req.body.shortAns
+      surveyTitle: req.body.surveyTitle,
+      submittedBy: req.body.displayName,
+      startDate: currentDate,
+      endDate: req.body.endDate,
+      questionTitle: req.body.questionTitle,
+      optionA: req.body.optionA
+      
       
     });
 

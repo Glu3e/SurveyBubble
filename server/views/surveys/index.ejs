@@ -12,14 +12,16 @@
           <table class="table table-bordered table-striped table-hover">
             <tr>
               <th class="text-center">Survey's Online</th>
-              <th class="text-center"></th>
-              <th class="text-center"></th>
+              <th class="text-center">Submitted By</th>
+              <th class="text-center">End Date</th>
             </tr>
             <!-- Template Row -->
             
             <% for (let count = 0; count < surveys.length; count++) { %>
             <tr>
               <td class="text-center"><%= surveys[count].surveyTitle %></td>
+              <td class="text-center"><%= surveys[count].submittedBy %></td>
+              <td class="text-center"><%= surveys[count].endDate %></td>
               <td class="text-center">
               <a href="/surveys/<%= surveys[count]._id %>" class="btn btn-primary">
               <i class="fa fa-pencil-square-o"></i> Edit</a>
@@ -32,6 +34,19 @@
             <% } %>
           </table>
 
+          <% for (let outerCount = 0; outerCount < surveys.length; outerCount++) { %>
+            <h3><%= surveys[outerCount].surveyTitle %></h3>
+          
+          <% for (let count = 1; count < 2; count++) { %>
+             <fieldset style="margin-bottom: 25px; border-radius: 15px;">                
+                <h4> Question <%= [count] %> </h4>
+                  <label><%= surveys[outerCount].questionTitle %></label><br/>
+                  <input <%= [count] %>" name="Question<%= [outerCount] %>.<%= [count] %>" type="text" value="Answer">
+                  <%= surveys[outerCount].shortAns %><br/>
+              </fieldset>
+
+             <% } %>
+             <% } %>
 
         </div>
       </div>

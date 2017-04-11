@@ -6,8 +6,7 @@ let surveySchema = mongoose.Schema({
     submittedBy: String,
     startDate: String,
     endDate: String,
-    questions: String,
-    shortAns: String
+    question: [{questionTitle: String, optionA: String}]
 },
 {
   collection: "surveys"

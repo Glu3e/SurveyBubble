@@ -30,7 +30,7 @@ module.exports.CreateSurvey = (req, res) => {
       "submittedBy": req.body.submittedBy,
       "startDate": req.body.startDate,
       "endDate": req.body.endDate,
-      "questions": req.body.questions,
+      "questionTitle": req.body.questionTitle,
       "shortAns": req.body.shortAns
     });
 

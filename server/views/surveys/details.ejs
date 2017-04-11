@@ -11,52 +11,70 @@
               </div>
 
               <div class="form-group">
-                <label for="QuestionTextField">Question</label>
-                <input type="text" class="form-control" id="QuestionTextField"
-                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
-                <input type="text" class="form-control" id="AnswerTextField"
-                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
+                <label for="EndDateTextField">End Date</label>
+                <input type="text" class="form-control" id="EndDateTextField"
+                placeholder="12/31/2018" name="endDate" value="<%= surveys.endDate %>"  required>
+              </div>
+
+              <% for (let count = 0; count < 1; count++) { %>
+
+                <h3>Question <%= [count] %></h3>
+
+              <div class="form-group">
+                <label for="QuestionTitleTextField<%= [count] %>">Question Title</label>
+                <input type="text" class="form-control" id="QuestionTitleTextField<%= [count] %>"
+                placeholder="Survey Quesetion" name="questionTitle<%= [count] %>" value="<%= surveys.questionTitle %>"  required>
+                
+                <input type="text" class="form-control" id="OptionATextField<%= [count] %>"
+                placeholder="Survey Answer" name="optionA<%= [count] %>" value="<%= surveys.optionA %>"> 
               </div>
 
               <div class="form-group">
                 <label for="QuestionTextField">Question</label>
-                <input type="text" class="form-control" id="QuestionTextField1"
-                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
-                <input type="text" class="form-control" id="AnswerTextField"
-                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
+                <input type="text" class="form-control" id="QuestionTitleTextField<%= [count] %>"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questionTitle %>"  required>
+                
+                <input type="text" class="form-control" id="OptionATextField<%= [count] %>"
+                placeholder="Survey Answer" name="optionA<%= [count] %>" value="<%= surveys.optionA %>">
               </div>
 
               <div class="form-group">
                 <label for="QuestionTextField">Question</label>
-                <input type="text" class="form-control" id="QuestionTextField2"
-                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
-                <input type="text" class="form-control" id="AnswerTextField"
-                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
+                <input type="text" class="form-control" id="QuestionTitleTextField<%= [count] %>"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questionTitle %>"  required>
+                
+                <input type="text" class="form-control" id="OptionATextField<%= [count] %>"
+                placeholder="Survey Answer" name="optionA<%= [count] %>" value="<%= surveys.optionA %>">
               </div>
 
               <div class="form-group">
                 <label for="QuestionTextField">Question</label>
-                <input type="text" class="form-control" id="QuestionTextField3"
-                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
-                <input type="text" class="form-control" id="AnswerTextField"
-                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
+                <input type="text" class="form-control" id="QuestionTitleTextField<%= [count] %>"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questionTitle %>"  required>
+                
+                <input type="text" class="form-control" id="OptionATextField<%= [count] %>"
+                placeholder="Survey Answer" name="optionA<%= [count] %>" value="<%= surveys.optionA %>">
               </div>
 
               <div class="form-group">
                 <label for="QuestionTextField">Question</label>
-                <input type="text" class="form-control" id="QuestionTextField4"
-                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
-                <input type="text" class="form-control" id="AnswerTextField"
-                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
+                <input type="text" class="form-control" id="QuestionTitleTextField<%= [count] %>"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questionTitle %>"  required>
+                
+                <input type="text" class="form-control" id="OptionATextField<%= [count] %>"
+                placeholder="Survey Answer" name="optionA<%= [count] %>" value="<%= surveys.optionA %>">
               </div>
 
               <div class="form-group">
                 <label for="QuestionTextField">Question</label>
-                <input type="text" class="form-control" id="QuestionTextField5"
-                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questions %>"  required>
-                <input type="text" class="form-control" id="AnswerTextField"
-                placeholder="Survey Answer" name="answer" value="<%= surveys.shortAns %>"> 
+                <input type="text" class="form-control" id="QuestionTitleTextField<%= [count] %>"
+                placeholder="Survey Quesetion" name="questions" value="<%= surveys.questionTitle %>"  required>
+               
+                <input type="text" class="form-control" id="OptionATextField<%= [count] %>"
+                placeholder="Survey Answer" name="optionA<%= [count] %>" value="<%= surveys.optionA %>">
               </div>
+
+               <% } %>
 
               <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
               <a href="/surveys" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
