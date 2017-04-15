@@ -25,7 +25,7 @@ Description: Short Ans survey creation page
 
               <% for (let count = 0; count < 1; count++) { %>
 
-                <h3>Question <%= [count] %></h3>
+                <h3>Short Quesetion <%= [count] %></h3>
 
               <div class="form-group">
                 <label for="questionTitleTextField<%= [count] %>">Question Title</label>
@@ -39,7 +39,7 @@ Description: Short Ans survey creation page
               <div class="form-group">
                 <label for="QuestionTextField">Question</label>
                 <input type="text" class="form-control" id="QuestionTitleTextField<%= [count] %>"
-                placeholder="Survey Quesetion" name="questionTitle<%= [count] %>" value="<%= surveys.questionTitle %>"  required>
+                placeholder="Survey Quesetion" name="questionTitle<%= [count] %>" value="<%= surveys.questionTitle  %>"  required>
                 
                 <input type="text" class="form-control" id="OptionATextField<%= [count] %>"
                 placeholder="Survey Answer" name="optionA<%= [count] %>" value="<%= surveys.optionA %>">
@@ -82,6 +82,7 @@ Description: Short Ans survey creation page
               </div>
 
                <% } %>
+          
 
               <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
               <a href="/surveys" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>

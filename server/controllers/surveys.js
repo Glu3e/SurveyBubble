@@ -43,12 +43,11 @@ module.exports.CreateSurvey = (req, res) => {
   currentDate = currentDate.toLocaleDateString();
   
   let newSurvey = survey({
-      "surveyTitle": req.body.surveyTitle,
-      "submittedBy": req.body.displayName,
-      "startDate": currentDate,
-      "endDate": req.body.endDate,
-      "questionTitle": req.body.questionTitle,
-      "optionA": req.body.optionA
+      surveyTitle: req.body.surveyTitle,
+      submittedBy: req.body.displayName,
+      startDate: currentDate,
+      endDate: req.body.endDate,
+      question: [{questionTitle: req.body.questionTitle0, optionA: req.body.optionA0}]
       
       
     });
@@ -101,8 +100,8 @@ module.exports.UpdateSurvey = (req, res) => {
       "submittedBy": req.body.submittedBy,
       "startDate": req.body.startDate,
       "endDate": req.body.endDate,
-      "questionTitle": req.body.questionTitle,
-      "optionA": req.body.optionA
+      "question": [{questionTitle: req.body.questionTitle0, optionA: req.body.optionA0,}]
+      
     });
 
     survey.update({_id: id}, updatedSurvey, (err) => {
