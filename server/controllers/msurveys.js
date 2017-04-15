@@ -33,7 +33,7 @@ module.exports.DisplayAdd = (req, res) => {
   res.render('msurveys/details', {
     title: "Add a new survey",
     msurveys: '',
-    displayName: req.user.displayName
+    displayName: req.user.displayName 
   });
 }
 // change this to fit the survey site
