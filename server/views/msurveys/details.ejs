@@ -21,37 +21,37 @@
               
               <% for (let count = 0; count < 1; count++) { %>
 
-                <h3>Question <%= [count] %></h3>
+                <!--h3>Question <%= [count] %></h3-->
 
                 <div class="form-group">  
-                  <label for="QuestionTitleTextField<%= [count] %>">Question Title</label>
+                  <label for="QuestionTitleTextField<%= [count] %>">Question <%= [count+1] %></label>
                   <input type="text" class="form-control" id="QuestionTitleTextField<%= [count] %>"
                   placeholder="Question Title" name="questionTitle<%= [count] %>" 
-                  value="<%= msurveys.questionTitle %>"  required>
+                  value="<%= msurveys.question[count].questionTitle %>"  required>
                 </div>
                 
                 <div class="form-group"> 
-                  <label for="OptionATextField<%= [count] %>">Option A</label>
+                  <!--label for="OptionATextField<%= [count] %>">Option A</label-->
                   <input type="text" class="form-control" id="OptionATextField<%= [count] %>"
-                  placeholder="A)" name="optionA<%= [count] %>" value=""  required>
+                  placeholder="A)" name="optionA<%= [count] %>" value="<%= msurveys.question[count].optionA %>"  required>
                 </div>
 
                 <div class="form-group"> 
-                  <label for="OptionBTextField<%= [count] %>">Option B</label>
+                  <!--label for="OptionBTextField<%= [count] %>">Option B</label-->
                   <input type="text" class="form-control" id="OptionBTextField<%= [count] %>"
-                  placeholder="B)" name="optionB<%= [count] %>" value=""  required>
+                  placeholder="B)" name="optionB<%= [count] %>" value="<%= msurveys.question[count].optionB %>"  required>
                 </div>
 
                 <div class="form-group"> 
-                  <label for="OptionCTextField<%= [count] %>">Option C</label>
+                  <!--label for="OptionCTextField<%= [count] %>">Option C</label-->
                   <input type="text" class="form-control" id="OptionCTextField<%= [count] %>"
-                  placeholder="C)" name="optionC<%= [count] %>" value=""  required>
+                  placeholder="C)" name="optionC<%= [count] %>" value="<%= msurveys.question[count].optionC %>"  required>
                 </div>
 
                 <div class="form-group"> 
-                  <label for="OptionDTextField<%= [count] %>">Option D</label>
+                  <!--label for="OptionDTextField<%= [count] %>">Option D</label-->
                   <input type="text" class="form-control" id="OptionDTextField<%= [count] %>"
-                  placeholder="D)" name="optionD<%= [count] %>" value=""  required>
+                  placeholder="D)" name="optionD<%= [count] %>" value="<%= msurveys.question[count].optionD %>"  required>
                 </div>
 
               <% } %>

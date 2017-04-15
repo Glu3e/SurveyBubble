@@ -42,9 +42,8 @@ currentDate = currentDate.toLocaleDateString();
       submittedBy: req.user.displayName,
       startDate: currentDate,
       endDate: req.body.endDate, 
-      question: [{questionTitle: req.body.questionTitle0,
-      optionA: req.body.optionA0, optionB: req.body.optionB0, optionC: req.body.optionC0,
-      optionD: req.body.optionD0}]   
+      question: [{questionTitle: req.body.questionTitle0, optionA: req.body.optionA0, 
+        optionB: req.body.optionB0, optionC: req.body.optionC0, optionD: req.body.optionD0}]   
     });
 
     survey.create(newSurvey, (err, survey) => {
