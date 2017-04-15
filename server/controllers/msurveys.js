@@ -1,3 +1,10 @@
+/*
+FileName: msurveys.js
+Author(s): Selina Daley
+WebSite: https://kevinexpress.herokuapp.com/
+Description: survey creation page
+*/ 
+
 let mongoose = require('mongoose');
 
 // define the game model

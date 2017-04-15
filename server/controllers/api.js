@@ -1,3 +1,9 @@
+/*
+FileName: api.js
+Author(s): Kevin Cornejo-Andrade, Selina Daley
+WebSite: https://kevinexpress.herokuapp.com/
+*/ 
+
 let mongoose = require('mongoose');
 
 // define the game model

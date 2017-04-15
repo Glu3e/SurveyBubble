@@ -1,3 +1,10 @@
+/*
+FileName: index.js
+Author(s): Kevin Cornejo-Andrade, Selina Daley
+WebSite: https://kevinexpress.herokuapp.com/
+Description: home routes no need to be registered user 
+*/ 
+
 // modules required for routing
 let express = require('express');
 let router = express.Router();

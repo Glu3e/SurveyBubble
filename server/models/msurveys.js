@@ -1,3 +1,10 @@
+/*
+FileName: msurveys.js
+Author(s): Selina Daley
+WebSite: https://kevinexpress.herokuapp.com/
+Description: multple choice schema
+*/ 
+
 let mongoose = require('mongoose');
 
 // create a model class

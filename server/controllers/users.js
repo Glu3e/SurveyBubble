@@ -1,3 +1,10 @@
+/*
+FileName: users.js
+Author(s): Kevin Cornejo-Andrade, Selina Daley
+WebSite: https://kevinexpress.herokuapp.com/
+Description: user logic
+*/ 
+
 let mongoose = require('mongoose');
 let passport = require('passport');
 

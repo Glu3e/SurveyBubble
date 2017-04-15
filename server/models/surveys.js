@@ -1,3 +1,10 @@
+/*
+FileName: surveys.js
+Author(s): Kevin Cornejo-Andrade
+WebSite: https://kevinexpress.herokuapp.com/
+Description: short anwser schema
+*/ 
+
 let mongoose = require('mongoose');
 //change this to survey Schema
 // create a model class

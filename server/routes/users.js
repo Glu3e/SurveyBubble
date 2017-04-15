@@ -1,3 +1,10 @@
+/*
+FileName: users.js
+Author(s): Kevin Cornejo-Andrade, Selina Daley
+WebSite: https://kevinexpress.herokuapp.com/
+Description: user routes
+*/ 
+
 // modules required for routing
 let express = require('express');
 let router = express.Router();
