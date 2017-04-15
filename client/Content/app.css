@@ -1,7 +1,9 @@
-/* Custom CSS goes here 
-have to add this refrence image to site
-<a href="http://www.freepik.com/free-vector/coloured-polygonal-background-design_906349.htm">Designed by Freepik</a>
-*/
+/*
+FileName: app.css
+Author: Kevin Cornejo-Andrade 
+WebSite: https://surveybubble.herokuapp.com/
+Description: StyleSheet for survey bubble.
+*/ 
 body {
   padding-bottom: 70px;
   background-color: 	#C63D0F;

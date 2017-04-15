@@ -1,3 +1,9 @@
+/*
+FileName: db.js
+Author(s): Kevin Cornejo-Andrade, Selina Daley
+WebSite: https://kevinexpress.herokuapp.com/
+Description: mongo and local connections 
+*/ 
 module.exports = {
   //local MongoDB deployment ->
   "URI": "mongodb://localhost/videogames"

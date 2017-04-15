@@ -1,3 +1,10 @@
+/*
+FileName: api.js
+Author(s): Kevin Cornejo-Andrade, Selina Daley
+WebSite: https://kevinexpress.herokuapp.com/
+Description: routes to the Crud logic controllers for the surveys
+*/ 
+
 // modules required for routing
 let express = require('express');
 let router = express.Router();
