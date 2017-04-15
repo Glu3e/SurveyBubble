@@ -39,7 +39,7 @@ Description: Short Ans survey creation page
               <div class="form-group">
                 <label for="QuestionTextField">Question</label>
                 <input type="text" class="form-control" id="QuestionTitleTextField<%= [count] %>"
-                placeholder="Survey Quesetion" name="questionTitle<%= [count] %>" value="<%= surveys.questionTitle %>"  required>
+                placeholder="Survey Quesetion" name="questionTitle<%= [count] %>" value="<%= surveys.questionTitle[count] %>"  required>
                 
                 <input type="text" class="form-control" id="OptionATextField<%= [count] %>"
                 placeholder="Survey Answer" name="optionA<%= [count] %>" value="<%= surveys.optionA %>">
