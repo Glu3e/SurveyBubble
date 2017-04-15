@@ -13,7 +13,9 @@ let surveySchema = mongoose.Schema({
     submittedBy: String,
     startDate: String,
     endDate: String,
-    question: [{questionTitle: String, optionA: String}]
+    questionTitle: String,
+    optionA: String
+    //question: [{questionTitle: String, optionA: String}]
 },
 {
   collection: "surveys"
