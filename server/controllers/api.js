@@ -2,6 +2,7 @@
 FileName: api.js
 Author(s): Kevin Cornejo-Andrade, Selina Daley
 WebSite: https://kevinexpress.herokuapp.com/
+Description: where the reading and creation of the new survey logic derives from 
 */ 
 
 let mongoose = require('mongoose');
