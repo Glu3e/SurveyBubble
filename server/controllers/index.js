@@ -14,11 +14,3 @@ module.exports.DisplayHome = (req, res) => {
    });
 }
 
-// Displays the Contact Page
-module.exports.DisplayContact = (req, res) => {
-  res.render('content/Search', {
-    title: 'Search',
-    surveys: '',
-    displayName: req.user ? req.user.displayName : ''
-   });
-}

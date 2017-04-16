@@ -7,9 +7,8 @@ Description: survey creation page
 
 let mongoose = require('mongoose');
 
-// define the game model
+// define the survey model
 let survey = require('../models/msurveys');
-//let question = require('../models/question');
 
 // Read and display the Game List
 module.exports.ReadSurveyList = (req, res) => {
@@ -39,7 +38,7 @@ module.exports.DisplayAdd = (req, res) => {
 // change this to fit the survey site
 // Create a new game and insert it into the db
 module.exports.CreateSurvey = (req, res) => {
-    
+
 // global route variables
 let currentDate = new Date();
 currentDate = currentDate.toLocaleDateString();
@@ -49,8 +48,11 @@ currentDate = currentDate.toLocaleDateString();
       submittedBy: req.user.displayName,
       startDate: currentDate,
       endDate: req.body.endDate, 
-      question: [{questionTitle: req.body.questionTitle0, optionA: req.body.optionA0, 
-        optionB: req.body.optionB0, optionC: req.body.optionC0, optionD: req.body.optionD0}]   
+      question: [{questionTitle: req.body.questionTitle0, optionA: req.body.optionA0, optionB: req.body.optionB0, optionC: req.body.optionC0, optionD: req.body.optionD0}, 
+                 {questionTitle: req.body.questionTitle1, optionA: req.body.optionA1, optionB: req.body.optionB1, optionC: req.body.optionC1, optionD: req.body.optionD1},
+                 {questionTitle: req.body.questionTitle2, optionA: req.body.optionA2, optionB: req.body.optionB2, optionC: req.body.optionC2, optionD: req.body.optionD2},
+                 {questionTitle: req.body.questionTitle3, optionA: req.body.optionA3, optionB: req.body.optionB3, optionC: req.body.optionC3, optionD: req.body.optionD3},
+                 {questionTitle: req.body.questionTitle4, optionA: req.body.optionA4, optionB: req.body.optionB4, optionC: req.body.optionC4, optionD: req.body.optionD4}]   
     });
 
     survey.create(newSurvey, (err, survey) => {
@@ -77,7 +79,7 @@ module.exports.DisplayEdit = (req, res) => {
           res.end(error);
         } else {
           // show the game details view
-          res.render('msurveys/details', {
+          res.render('msurveys/details2', {
               title: 'msurvey Details',
               msurveys: surveys,
               displayName: req.user.displayName
@@ -96,12 +98,16 @@ module.exports.UpdateSurvey = (req, res) => {
     let id = req.params.id;
 
      let updatedSurvey = survey({
-       "_id": id,
-      "name": req.body.name,
-      "QuestionNum": req.body.QuestionNum,
-      "questions": req.body.questions,
-      "answers": req.body.answers,
-      "answerNum": req.body.answerNum
+
+      _id : id,
+      surveyTitle: req.body.surveyTitle,
+      submittedBy: req.user.displayName,
+      endDate: req.body.endDate, 
+      question: [{questionTitle: req.body.questionTitle0, optionA: req.body.optionA0, optionB: req.body.optionB0, optionC: req.body.optionC0, optionD: req.body.optionD0}, 
+                 {questionTitle: req.body.questionTitle1, optionA: req.body.optionA1, optionB: req.body.optionB1, optionC: req.body.optionC1, optionD: req.body.optionD1},
+                 {questionTitle: req.body.questionTitle2, optionA: req.body.optionA2, optionB: req.body.optionB2, optionC: req.body.optionC2, optionD: req.body.optionD2},
+                 {questionTitle: req.body.questionTitle3, optionA: req.body.optionA3, optionB: req.body.optionB3, optionC: req.body.optionC3, optionD: req.body.optionD3},
+                 {questionTitle: req.body.questionTitle4, optionA: req.body.optionA4, optionB: req.body.optionB4, optionC: req.body.optionC4, optionD: req.body.optionD4}]
     });
 
     survey.update({_id: id}, updatedSurvey, (err) => {

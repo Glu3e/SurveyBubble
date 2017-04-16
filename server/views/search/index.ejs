@@ -10,23 +10,10 @@ Description: Search survey page
     <div class="container">
       <div class="row">
         <div id="main-div" class="col-md-offset-3 col-md-6">
-          <!--h1><%= title %></h1-->
-          <!--p>Contact Me</p-->
 
           <h1>Search for a Survey</h1>
-          <br>
-          <p>Enter information into at least one of the textboxes and then select the Search button to find a list of surveys that
-          match the information entered.</p>
-          <br>
-          <p>If no information is entered a list of all available surveys will be returned.</p>
-          <br>
 
           <form class="form" method="post">
-              <div class="form-group">
-                <label for="IdTextField">Survey ID:</label>
-                <input type="text" class="form-control" id="IdTextField">
-                <placeholder="Survey ID" name="id" required>
-              </div>
               <div class="form-group">
                 <label for="NameTextField">Survey Name:</label>
                 <input type="text" class="form-control" id="NameTextField">
@@ -38,12 +25,13 @@ Description: Search survey page
                 <placeholder="Submitted By" name="submittedBy" required>
               </div>
               <div class="form-group">
-                  <label>Type of Survey</label><br/>
-                  <input id="rdBtnMC" type="radio" value="MC"> Multiple Choice &nbsp;&nbsp;
-                  <input id="rdBtnSA" type="radio" value="SA"> Short Answer<br/>
+                  <label>Type of Search</label><br/>
+                  <input id="rdBtnAND" type="radio" name="searchType" value="AND"> AND &nbsp;&nbsp;
+                  <input id="rdBtnOR" type="radio" name="searchType" value="OR"> OR<br/>
               </div>
               <br>
-              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Submit</button>
+              <a href="/search/results" class="btn btn-primary"><i class="fa fa-search"></i> Search</a>
             </form>
 
         </div>
