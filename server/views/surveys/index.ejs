@@ -44,12 +44,12 @@ Description: Short Ans survey landing page
           <% for (let outerCount = 0; outerCount < surveys.length; outerCount++) { %>
             <h3><%= surveys[outerCount].surveyTitle %></h3>
           
-          <% for (let count = 1; count < 6; count++) { %>
+          <% for (let count = 0; count < 6; count++) { %>
              <fieldset style="margin-bottom: 25px; border-radius: 15px;">                
                 <h4> Question <%= [count] %> </h4>
                   <label><%= surveys[outerCount].questionTitle %></label><br/>
-                  <input <%= [count] %>" name="Question<%= [outerCount] %>.<%= [count] %>" type="text" value="Answer">
-                  <%= surveys[outerCount].shortAns %><br/>
+                  <input <%= [count] %>" name="question<%= [outerCount] %>.<%= [count] %>" type="text" value="Answer">
+                  <%= surveys[outerCount].optionA %><br/>
               </fieldset>
 
              <% } %>
