@@ -47,7 +47,7 @@ module.exports.CreateSurvey = (req, res) => {
       submittedBy: req.body.displayName,
       startDate: currentDate,
       endDate: req.body.endDate,
-      question: [{questionTitle: req.body.questionTitle0, optionA: req.body.optionA0}]
+      question: [{questionTitle: req.body.questionTitle, optionA: req.body.optionA}]
       
       
     });
@@ -97,10 +97,10 @@ module.exports.UpdateSurvey = (req, res) => {
      let updatedSurvey = survey({
        "_id": id,
       "surveyTitle": req.body.surveyTitle,
-      "submittedBy": req.body.submittedBy,
+      "submittedBy": req.user.displayName,
       "startDate": req.body.startDate,
       "endDate": req.body.endDate,
-      "question": [{questionTitle: req.body.questionTitle0, optionA: req.body.optionA0,}]
+      "question": req.body.question [{questionTitle: req.body.questionTitle, optionA: req.body.optionA,}]
       
     });
 
