@@ -7,61 +7,65 @@ Description: Short Ans survey landing page
 
 <% include ../partials/header.ejs %>
 
-    <!-- MAIN CONTENT -->
     
     <div class="container">
       <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-          <h3>Survey creation Page </h3>
-           <a href="/surveys/add" class="btn btn-primary"><i class="fa fa-plus"></i> Short Answer Template</a>
-           <!-- add another link to add other template-->
+        <div id="main-div" class="col-md-offset-3 col-md-6">
+          <h3>Survey Search Results </h3>          
           <br>
           <table class="table table-bordered table-striped table-hover">
             <tr>
-              <th class="text-center">Survey's Online</th>
+              <th class="text-center">Name</th>
               <th class="text-center">Submitted By</th>
               <th class="text-center">End Date</th>
+              <th class="text-center"></th>
             </tr>
-            <!-- Template Row -->
             
-            <% for (let count = 0; count < surveys.length; count++) { %>
+            <% for (let count = 0; count < msurveys.length; count++) { %>
+                        
             <tr>
-              <td class="text-center"><%= surveys[count].surveyTitle %></td>
-              <td class="text-center"><%= surveys[count].submittedBy %></td>
-              <td class="text-center"><%= surveys[count].endDate %></td>
+              <td class="text-center"><%= msurveys[count].surveyTitle %></td>
+              <td class="text-center"><%= msurveys[count].submittedBy %></td>
+              <td class="text-center"><%= msurveys[count].endDate %></td>
               <td class="text-center">
-              <a href="/surveys/<%= surveys[count]._id %>" class="btn btn-primary">
-              <i class="fa fa-pencil-square-o"></i> Edit</a>
-               </td>
-              <td class="text-center">
-              <a href="/surveys/delete/<%= surveys[count]._id %>" class="btn btn-danger">
-              <i class="fa fa-trash-o"></i> Delete</a>
+              <a href="/search/results/<%= msurveys[count]._id %>" class="btn btn-primary">
+              <i class="fa fa-pencil-square-o"></i> Select</a>
               </td>
+              
             </tr>
             <% } %>
           </table>
 
-          <% for (let outerCount = 0; outerCount < surveys.length; outerCount++) { %>
-            <h3><%= surveys[outerCount].surveyTitle %></h3>
-          
-          <% for (let count = 0; count < 6; count++) { %>
+        </div>
+      </div>
+    </div>
+    <br>
+<div id="surveys">
+     <% for (let outerCount = 0; outerCount < msurveys.length; outerCount++) { %>
+            <h3><%= msurveys[outerCount].surveyTitle %></h3>
+        
+            <% for (let count = 0; count < 5; count++) { %>
+
              <fieldset style="margin-bottom: 25px; border-radius: 15px;">                
-                <h4> Question <%= [count] %> </h4>
-                  <label><%= surveys[outerCount].questionTitle %></label><br/>
-                  <input <%= [count] %>" name="question<%= [outerCount] %>.<%= [count] %>" type="text" value="Answer">
-                  <%= surveys[outerCount].optionA %><br/>
+                <h4> Question <%= [count+1] %> </h4>
+                  <label><%= msurveys[outerCount].question[count].questionTitle %></label><br/>
+                  <input id="rdBtnA<%= [count] %>" name="Question<%= [outerCount] %>.<%= [count] %>" type="radio" value="A">
+                  a) <%= msurveys[outerCount].question[count].optionA %> <br/>
+                  <input id="rdBtnB<%= [count] %>" name="Question<%= [outerCount] %>.<%= [count] %>" type="radio" value="B">
+                  b) <%= msurveys[outerCount].question[count].optionB %><br/>
+                  <input id="rdBtnC<%= [count] %>" name="Question<%= [outerCount] %>.<%= [count] %>" type="radio" value="C">
+                  c) <%= msurveys[outerCount].question[count].optionC %><br/>
+                  <input id="rdBtnD<%= [count] %>" name="Question<%= [outerCount] %>.<%= [count] %>" type="radio" value="D">
+                  d) <%= msurveys[outerCount].question[count].optionD %><br/>
               </fieldset>
 
              <% } %>
              <% } %>
-
-        </div>
-      </div>
-    </div>
+</div>
    
-
     <my-app></my-app>
 
+    
 <% include ../partials/footer.ejs %>
 
 
