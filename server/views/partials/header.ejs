@@ -40,8 +40,8 @@ Description: header and navigation for all pages
         <% } else { %>
           <li><a href="/"><i class="fa fa-home fa-lg"></i> Home</a></li>
         <% } %>
-
-        <% if(typeof displayName == 'string' && displayName) { %>
+         <!-- Registered user -->
+        <!--<% if(typeof displayName == 'string' && displayName) { %>
           <% if(title == "Surveys") { %>
           <li class="active"><a href="/surveys"><i class="fa fa-list-alt fa-lg">
           </i> Surveys</a></li>
@@ -49,7 +49,7 @@ Description: header and navigation for all pages
             <li><a href="/surveys"><i class="fa fa-list-alt fa-lg">
             </i> Surveys</a></li>
           <% } %>
-        <% } %>
+        <% } %>-->
 
         <% if(typeof displayName == 'string' && displayName) { %>
           <% if(title == "M Surveys") { %>
@@ -62,9 +62,9 @@ Description: header and navigation for all pages
         <% } %>
 
         <% if(title == "Search") { %>
-          <li class="active"><a href="/Search"><i class="fa fa-search fa-lg"></i> Search</a></li>
+          <li class="active"><a href="/search"><i class="fa fa-search fa-lg"></i> Search</a></li>
         <% } else { %>
-          <li><a href="/Search"><i class="fa fa-search fa-lg"></i> Search</a></li>
+          <li><a href="/search"><i class="fa fa-search fa-lg"></i> Search</a></li>
         <% } %>
 
         <% if(typeof displayName == 'string' && displayName) { %>

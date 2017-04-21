@@ -1,0 +1,46 @@
+<!-- 
+FileName: register.ejs
+Author(s): Selina Daley
+WebSite: https://kevinexpress.herokuapp.com/
+Description: multiple choice survey landing page
+-->
+
+<% include ../partials/header.ejs %>
+
+    <!-- MAIN CONTENT -->
+    
+    <div class="container">
+      <div class="row">
+        <div id="main-div" class="col-md-offset-3 col-md-6">
+          <h3>Survey Search Results </h3>          
+          <br>
+          <table class="table table-bordered table-striped table-hover">
+            <tr>
+              <th class="text-center">Name</th>
+              <th class="text-center">Submitted By</th>
+              <th class="text-center">End Date</th>
+              <th class="text-center"></th>
+            </tr>
+            
+            <% for (let count = 0; count < msurveys.length; count++) { %>
+                        
+            <tr>
+              <td class="text-center"><%= msurveys[count].surveyTitle %></td>
+              <td class="text-center"><%= msurveys[count].submittedBy %></td>
+              <td class="text-center"><%= msurveys[count].endDate %></td>
+              <td class="text-center">
+              <a href="/search/results<%= msurveys[count]._id %>" class="btn btn-primary">
+              <i class="fa fa-pencil-square-o"></i> Select</a>
+              </td>
+              
+            </tr>
+            <% } %>
+          </table>
+
+        </div>
+      </div>
+    </div>
+   
+    <my-app></my-app>
+
+<% include ../partials/footer.ejs %>

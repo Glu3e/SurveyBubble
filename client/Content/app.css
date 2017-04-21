@@ -6,7 +6,21 @@ Description: StyleSheet for survey bubble.
 */ 
 body {
   padding-bottom: 70px;
-  background-color: 	#C63D0F;
+  background-color: 	#2e6da4;
+  }
+  #main-div{
+    border-radius: 15px; 
+    background-color: 	#C4E7FD;
+    padding: 10px 30px 30px 30px;
+  }
+  #surveys{
+    width: 500px;
+    border-radius: 15px; 
+    background-color: 	#C4E7FD;
+    padding: 10px 30px 30px 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   .navbar {
     background-color: #3B3738;
@@ -21,16 +35,20 @@ body {
     background-color: #FFFFFF;
   }
   #front {
-    background: url( https://static.vecteezy.com/system/resources/previews/000/113/007/original/orange-geometric-low-poly-vector-background.jpg) no-repeat;
+    width: auto;
+    background: url(../images/bubble-banner.jpg);
+    background-size: 100%; 
     box-shadow: 8px 8px 5px #393e47;
   }
   .iconImage {
     width: 100px;
     height: 100px;
   }
-    .login {
+  .login {
     border-radius: 15px; 
-    background-color: #FDF3E7;
+    border-color: black;
+    background-color: #C4E7FD;
+    padding: 30px;
   }
   /*#active {
     color: #7E8F7C;

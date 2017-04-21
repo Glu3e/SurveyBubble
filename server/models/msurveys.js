@@ -2,7 +2,7 @@
 FileName: msurveys.js
 Author(s): Selina Daley
 WebSite: https://kevinexpress.herokuapp.com/
-Description: multple choice schema
+Description: multiple choice schema
 */ 
 
 let mongoose = require('mongoose');
@@ -13,9 +13,12 @@ let msurveySchema = mongoose.Schema({
     submittedBy: String,
     startDate: String,
     endDate: String,    
-    question: [{questionTitle: String, optionA: String, optionB: String, 
-      optionC: String, optionD: String}]
-    
+
+    question: [{questionTitle: String, optionA: String, optionB: String, optionC: String, optionD: String},
+               {questionTitle: String, optionA: String, optionB: String, optionC: String, optionD: String},
+               {questionTitle: String, optionA: String, optionB: String, optionC: String, optionD: String},
+               {questionTitle: String, optionA: String, optionB: String, optionC: String, optionD: String},
+               {questionTitle: String, optionA: String, optionB: String, optionC: String, optionD: String}]    
 },
 {
   collection: "msurveys"

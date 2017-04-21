@@ -10,13 +10,13 @@ let express = require('express');
 let router = express.Router();
 
 // define the game model
-let game = require('../models/surveys');
+//let game = require('../models/msurveys');
 
 // require the users controller for authentication
 let usersController = require('../controllers/users');
 
 // require the api controller to access games collection
-let apiController = require('../controllers/api');
+//let apiController = require('../controllers/api');
 
 /* GET games List - READ */
 router.get('/', usersController.RequireAuth, (req, res, next) => {
