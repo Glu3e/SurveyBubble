@@ -13,6 +13,15 @@ body {
     background-color: 	#C4E7FD;
     padding: 10px 30px 30px 30px;
   }
+  #surveys{
+    width: 500px;
+    border-radius: 15px; 
+    background-color: 	#C4E7FD;
+    padding: 10px 30px 30px 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .navbar {
     background-color: #3B3738;
   }

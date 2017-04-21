@@ -21,9 +21,9 @@ router.get('/', (req, res, next) => {
 });
 
 /* GET games List page. READ */
-router.get('/results', (req, res, next) => {
+router.get('search/results', (req, res, next) => {
   searchController.ReadSurveyList(req, res);
-}).post('/results', (req, res, next) => {
+}).post('search/results', (req, res, next) => {
   searchController.ReadSurveyList2(req, res);
 });
 
