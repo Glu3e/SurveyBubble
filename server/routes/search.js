@@ -33,6 +33,10 @@ router.get('/add', usersController.RequireAuth, (req, res, next) => {
 }).post('/add', usersController.RequireAuth, (req, res, next) => {
   // POST process the Game Details page and create a new Game - CREATE
   surveysController.CreateSurvey(req, res);
-});*/
+});*/ 
+
+router.get('/results/:id', (req, res, next) => {
+  searchController.DisplaySurvey(req, res);
+});
 
 module.exports = router;
