@@ -30,7 +30,7 @@ module.exports.ReadSurveyList = (req, res) => {
       return console.error(err);
     }
     else {
-      res.render('msurveys/index', {
+      res.render('search/results', {
         title: 'Survey Search Results',
         msurveys: surveys,
         displayName: req.user ? req.user.displayName : '',
@@ -51,8 +51,7 @@ module.exports.ReadSurveyList2 = (req, res, next) => {
         res.end(err);
     }
     else {
-      //res.redirect('search/results');
-      res.redirect('surveys/index');
+      res.redirect('search/results');
     }
 
     });
