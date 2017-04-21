@@ -21,9 +21,9 @@ router.get('/', (req, res, next) => {
 });
 
 /* GET games List page. READ */
-router.get('search/results', (req, res, next) => {
+router.get('/results', (req, res, next) => {
   searchController.ReadSurveyList(req, res);
-}).post('search/results', (req, res, next) => {
+}).post('/results', (req, res, next) => {
   searchController.ReadSurveyList2(req, res);
 });
 
@@ -35,7 +35,7 @@ router.get('/add', usersController.RequireAuth, (req, res, next) => {
   surveysController.CreateSurvey(req, res);
 });*/ 
 
-router.get('/results/:id', (req, res, next) => {
+router.get('/details/:id', (req, res, next) => {
   searchController.DisplaySurvey(req, res);
 });
 
