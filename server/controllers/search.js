@@ -37,9 +37,10 @@ module.exports.ReadSurveyList = (req, res) => {
         submitted: req.body.submittedBy
       });
     }
-
-    console.log(submitted);
-  }).or([{surveyTitle: req.body.name},{submittedBy: req.user.displayName}]);
+  });//.$where('submittedBy === Selina Daley').exec();
+  //or([{surveyTitle: req.body.name},{submittedBy: 'Selina Daley'}]);
+  //where([{submittedBy: 'Selina Daley'}]).all([]);
+  //.or([{submittedBy: 'Selina Daley'}]);
 };
 
 module.exports.ReadSurveyList2 = (req, res, next) => {
@@ -55,6 +56,31 @@ module.exports.ReadSurveyList2 = (req, res, next) => {
 
     });
 };
+
+module.exports.DisplaySurvey = (req, res) => {
+  try {
+      // get a reference to the id from the url
+      let id = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+        // find one game by its id
+      survey.findById(id, (err, surveys) => {
+        if(err) {
+          console.log(err);
+          res.end(error);
+        } else {
+          // show the game details view
+          res.render('search/details', {
+              title: 'Complete the Survey',
+              msurveys: surveys,
+              displayName: req.user ? req.user.displayName : ''
+          });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.redirect('/errors/404');
+    }
+}
 
 // Deletes a game from the games collection
 module.exports.DeleteSurvey = (req, res) => {
