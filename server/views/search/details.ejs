@@ -21,15 +21,22 @@
                   c) <%= msurveys.question[count].optionC %><br/>
                   <input id="rdBtnD<%= [count] %>" name="Question<%= [count] %>" type="radio" value="D">
                   d) <%= msurveys.question[count].optionD %><br/>
+                  
               </fieldset>
+            
 
              <% } %>
+               <button type="submit" onclick="thankYou()">>Submit</button>
             
 
         </div>
       </div>
     </div>
-
+<script>
+function thankYou() {
+    alert("Thank you for taking the survey!");
+}
+</script>
 
 
 <% include ../partials/footer.ejs %>
