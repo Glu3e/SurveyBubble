@@ -8,6 +8,9 @@ Description: mult choice crud routes
 // modules required for routing
 let express = require('express');
 let router = express.Router();
+let mongoose = require('mongoose');
+let mongo = require('mongodb').MongoClient;
+let assert = require('assert');
 
 // define the game model
 let survey = require('../models/msurveys');
@@ -43,5 +46,23 @@ router.get('/:id', usersController.RequireAuth, (req, res, next) => {
 router.get('/delete/:id', usersController.RequireAuth, (req, res, next) => {
   surveysController.DeleteSurvey(req, res);
 });
+
+mongo.connect('mongodb://kev:qweasd@ds054999.mlab.com:54999/videogames-kevin', (err, database) => {
+  if (err) return console.log(err)
+  db = database
+})
+
+router.get('/msurveys', (req,res) => {
+  //when live switch to live db
+  var cursor = db.collection('msurveys').find();
+  db.collection('msurveys').find().toArray((err, results) => {
+    if(err) return console.log(err)
+    res.render('index', {msurveys: result})
+  })  
+});
+  
+
+
+
 
 module.exports = router;
