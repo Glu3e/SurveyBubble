@@ -4,10 +4,27 @@ Author: Kevin Cornejo-Andrade
 WebSite: https://surveybubble.herokuapp.com/
 Description: StyleSheet for survey bubble.
 */ 
-body {
-  padding-bottom: 70px;
-  background-color: 	#2e6da4;
+html,body {
+  height: auto;
+  background: url("https://blog.gaijinpot.com/wp-content/uploads/sites/4/2014/11/speech-bubbles.jpg") no-repeat center center fixed;
   }
+  .page-wrap {
+    min-height: 100%;
+    margin-bottom: -145px; 
+  }
+  .page-wrap::after {
+    content: "";
+    display: block;
+  }
+  #footer, .page-wrap::after {
+    height: -145px;   
+  }
+  #footer {
+    background: #00b7eb;
+  }
+ .h1-responsive {
+   color: #FFFFFF;
+ }
   #main-div{
     border-radius: 15px; 
     background-color: 	#C4E7FD;
@@ -50,7 +67,9 @@ body {
     background-color: #C4E7FD;
     padding: 30px;
   }
-  /*#active {
-    color: #7E8F7C;
-  }*/
+
+
+ 
+
+
 
